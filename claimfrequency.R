@@ -187,7 +187,7 @@ ggplot(lift_table, aes(x = factor(decile), y = Lift, group = 1))+
 
 
 # Calibration plot: predicted vs actual claim rate by decile
-ggplot(lift_table, aes(x = factor(decile, group = 1)) + geom_line(aes(y = AvgPredictedProb, linetype = "Predicted")) +
+ggplot(lift_table, aes(x = factor(decile), group = 1)) + geom_line(aes(y = AvgPredictedProb, linetype = "Predicted")) +
          geom_point(aes(y = AvgPredictedProb, shape = "Predicted")) +
          geom_line(aes(y = ActualClaimRate, linetype = "Actual")) +
          geom_point(aes(y = ActualClaimRate, shape = "Actual"))+
@@ -197,7 +197,7 @@ ggplot(lift_table, aes(x = factor(decile, group = 1)) + geom_line(aes(y = AvgPre
            y = "Claim Rate",
            linetype = "",
            shape = ""
-         ))
+         )
          
                                                                 
 summary(model)
